@@ -1,4 +1,4 @@
-# Mass File Rename
+# Random File Renamer
 
 ## Description
 A simple Python script that copies files with specified extensions to a new folder, renaming them with randomly generated alphanumeric filenames.
@@ -8,7 +8,8 @@ A simple Python script that copies files with specified extensions to a new fold
 - Generates unique random filenames
 - Supports multiple file extensions
 - Preserves original file extensions
-- Creates a dedicated 'renamedDocuments' folder for output
+- Creates a dedicated 'renamedPhotos' folder for output
+- Tracks and displays total runtime of the script
 
 ## Requirements
 - Python 3.x
@@ -28,7 +29,7 @@ A simple Python script that copies files with specified extensions to a new fold
    - Press Enter to use default extensions (.txt, .png, .jpg)
    - Enter custom extensions (e.g., `.pdf, .docx`)
 
-## Example
+## Example Output
 ```
 Enter file extensions to rename (comma-separated, or press Enter for default .txt, .png, .jpg): 
 Copied: photo1.jpg -> A7xK9mB2Tz.jpg
@@ -36,12 +37,17 @@ Copied: document.txt -> Q5nJ3fH8Lp.txt
 
 Total files copied: 2
 Files saved to: /path/to/current/directory/renamedPhotos
+Total runtime: 0.23 seconds
 ```
 
 ## Precautions
 - Always backup your files before running
 - Original files remain untouched
 - Unique random filenames prevent overwriting
+
+## Performance
+- Runtime is displayed to help you understand script performance
+- Actual time depends on number and size of files being processed
 
 ## License
 MIT License

@@ -2,6 +2,7 @@ import os
 import random
 import string
 import shutil
+import time
 
 
 def rename_files_in_folder(folder_path=None, extensions=[".txt", ".png", ".jpg"]):
@@ -11,11 +12,14 @@ def rename_files_in_folder(folder_path=None, extensions=[".txt", ".png", ".jpg"]
     :param folder_path: Path to the folder containing files to rename (defaults to current directory)
     :param extensions: List of file extensions to rename (default: .txt, .png, .jpg)
     """
+    # Start timing the script
+    start_time = time.time()
+
     # Use current directory if no path specified
     if folder_path is None:
         folder_path = os.getcwd()
 
-    # Create 'renamedDocuments' folder if it doesn't exist
+    # Create 'renamedPhotos' folder if it doesn't exist
     renamed_folder = os.path.join(folder_path, "renamedDocuments")
     os.makedirs(renamed_folder, exist_ok=True)
 
@@ -69,9 +73,14 @@ def rename_files_in_folder(folder_path=None, extensions=[".txt", ".png", ".jpg"]
             except Exception as e:
                 print(f"Error copying {filename}: {e}")
 
+    # Calculate total runtime
+    end_time = time.time()
+    total_runtime = end_time - start_time
+
     # Print summary
     print(f"\nTotal files copied: {copied_files}")
     print(f"Files saved to: {renamed_folder}")
+    print(f"Total runtime: {total_runtime:.2f} seconds")
 
 
 # Default script execution
